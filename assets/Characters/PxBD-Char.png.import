@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blcha8q4krs18"
-path="res://.godot/imported/PxBD-Tryout_Place.png-7e10bfd901d2348c1c2c6b24b08a174b.ctex"
+uid="uid://b6pocgntb0t7q"
+path="res://.godot/imported/PxBD-Char.png-ca63af2a2367cce96d60bf14e502e155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Characters/PxBD-Tryout_Place.png"
-dest_files=["res://.godot/imported/PxBD-Tryout_Place.png-7e10bfd901d2348c1c2c6b24b08a174b.ctex"]
+source_file="res://assets/Characters/PxBD-Char.png"
+dest_files=["res://.godot/imported/PxBD-Char.png-ca63af2a2367cce96d60bf14e502e155.ctex"]
 
 [params]
 
