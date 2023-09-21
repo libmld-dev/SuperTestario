@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvi5666xveh3l"]
+[gd_scene load_steps=6 format=3 uid="uid://dvi5666xveh3l"]
 
-[ext_resource type="Script" path="res://scripts/player_phys.gd" id="1_gullc"]
 [ext_resource type="Texture2D" uid="uid://c6gjad3ta6oxi" path="res://assets/tiles_demo.png" id="2_qe2om"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_migqi"]
@@ -280,16 +279,14 @@ sources/1 = SubResource("TileSetAtlasSource_ufp16")
 
 [node name="world001" type="Node2D"]
 
-[node name="Player" type="Node" parent="."]
+[node name="Player" type="Player" parent="."]
+velocity = Vector2(0, 244858)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
-script = ExtResource("1_gullc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(185, 361)
 shape = SubResource("RectangleShape2D_migqi")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player/CharacterBody2D/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player/CollisionShape2D"]
 position = Vector2(1.19209e-06, 0.249982)
 scale = Vector2(16, 16)
 texture = SubResource("PlaceholderTexture2D_kajmn")
