@@ -374,7 +374,7 @@ texture = SubResource("PlaceholderTexture2D_kajmn")
 
 [node name="MainBody" type="AnimatedSprite2D" parent="Player/CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_54drn")
-animation = &"walk_right"
+animation = &"idle_right"
 
 [node name="World" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_u61e8")
