@@ -1,11 +1,91 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvi5666xveh3l"]
+[gd_scene load_steps=16 format=3 uid="uid://dvi5666xveh3l"]
 
+[ext_resource type="Texture2D" uid="uid://b6pocgntb0t7q" path="res://assets/Characters/PxBD-Char.png" id="1_5qijg"]
 [ext_resource type="Texture2D" uid="uid://c6gjad3ta6oxi" path="res://assets/tiles_demo.png" id="2_qe2om"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_migqi"]
 size = Vector2(16, 15.5)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kajmn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egnlm"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyoi3"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntddc"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ood02"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkl44"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctm3c"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npygf"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g0l8"]
+atlas = ExtResource("1_5qijg")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54drn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egnlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyoi3")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntddc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ood02")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkl44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctm3c")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npygf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g0l8")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufp16"]
 texture = ExtResource("2_qe2om")
@@ -287,9 +367,14 @@ position = Vector2(185, 361)
 shape = SubResource("RectangleShape2D_migqi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/CollisionShape2D"]
+visible = false
 position = Vector2(1.19209e-06, 0.249982)
 scale = Vector2(16, 16)
 texture = SubResource("PlaceholderTexture2D_kajmn")
+
+[node name="MainBody" type="AnimatedSprite2D" parent="Player/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_54drn")
+animation = &"walk_right"
 
 [node name="World" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_u61e8")
