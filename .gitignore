@@ -1,5 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 *.o
+*.obj
 .aseprite_wizard_history
 .sconsign.dblite
