@@ -47,6 +47,11 @@ void Player::_process(double delta)
         animBody->play(lookLeft ? "idle_left" : "idle_right");
         animHead->play(lookLeft ? "left" : "right");
     }
+
+    // sync
+    const int32_t frame = animBody->get_frame();
+    const double progress = animBody->get_frame_progress();
+    animHead->set_frame_and_progress(frame, progress);
 }
 
 void Player::_physics_process(double delta)
