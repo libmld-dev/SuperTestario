@@ -27,24 +27,25 @@ Player::~Player()
 void Player::_process(double delta)
 {
     const Input *input = Input::get_singleton();
-    AnimatedSprite2D *anim = get_node<AnimatedSprite2D>(NodePath("CollisionShape2D/MainBody"));
-
-    if(anim == nullptr)
-        return;
+    AnimatedSprite2D *animBody = get_node<AnimatedSprite2D>(NodePath("CollisionShape2D/MainBody"));
+    AnimatedSprite2D *animHead = get_node<AnimatedSprite2D>(NodePath("CollisionShape2D/Head"));
 
     if(input->is_action_pressed("ui_left"))
     {
         lookLeft = true;
-        anim->play("walk_left");
+        animBody->play("walk_left");
+        animHead->play("left");
     }
     else if(input->is_action_pressed("ui_right"))
     {
         lookLeft = false;
-        anim->play("walk_right");
+        animBody->play("walk_right");
+        animHead->play("right");
     }
     else
     {
-       anim->play(lookLeft ? "idle_left" : "idle_right");
+        animBody->play(lookLeft ? "idle_left" : "idle_right");
+        animHead->play(lookLeft ? "left" : "right");
     }
 }
 
