@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvi5666xveh3l"]
+[gd_scene load_steps=21 format=3 uid="uid://dvi5666xveh3l"]
 
 [ext_resource type="Texture2D" uid="uid://b6pocgntb0t7q" path="res://assets/Characters/PxBD-Char.png" id="1_5qijg"]
 [ext_resource type="Texture2D" uid="uid://c6gjad3ta6oxi" path="res://assets/tiles_demo.png" id="2_qe2om"]
@@ -6,8 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_migqi"]
 size = Vector2(16, 15.5)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kajmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egnlm"]
 atlas = ExtResource("1_5qijg")
@@ -407,12 +405,6 @@ velocity = Vector2(0, 244858)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(185, 361)
 shape = SubResource("RectangleShape2D_migqi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player/CollisionShape2D"]
-visible = false
-position = Vector2(1.19209e-06, 0.249982)
-scale = Vector2(16, 16)
-texture = SubResource("PlaceholderTexture2D_kajmn")
 
 [node name="MainBody" type="AnimatedSprite2D" parent="Player/CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_54drn")
