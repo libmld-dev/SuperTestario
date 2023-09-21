@@ -407,10 +407,12 @@ position = Vector2(185, 361)
 shape = SubResource("RectangleShape2D_migqi")
 
 [node name="MainBody" type="AnimatedSprite2D" parent="Player/CollisionShape2D"]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_54drn")
 animation = &"idle_right"
 
 [node name="Head" type="AnimatedSprite2D" parent="Player/CollisionShape2D"]
+texture_filter = 1
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_relej")
 animation = &"right"
