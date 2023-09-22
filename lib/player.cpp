@@ -12,7 +12,7 @@ void Player::_bind_methods()
 {
 }
 
-Player::Player() : lookLeft(true)
+Player::Player() : lookLeft(false)
 {
     if(Engine::get_singleton()->is_editor_hint())
         set_process_mode(Node::ProcessMode::PROCESS_MODE_DISABLED);
@@ -56,7 +56,6 @@ void Player::_process(double delta)
 
 void Player::_physics_process(double delta)
 {
-
 	Vector2& velo = get_velocity();
     const Input *input = Input::get_singleton();
 
